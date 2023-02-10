@@ -21,11 +21,11 @@ if (response.IsSuccessStatusCode)
     Console.Clear();
     Console.WriteLine(
         $"Погодка в городе таком: {model.city.name}, на {DateTime.Now} - {model.list[0].weather[0].description}\n" +
-        $"Дегризы {Math.Round(model.list[0].main.temp, 1)}°С\n" +
-        $"По ощущениям {Math.Round(model.list[0].main.feels_like, 1)}°С\n" +
-        $"Влажность п#зды а ой - {model.list[0].main.humidity}%\n" +
+        $"Температура {Math.Round(model.list[0].main.temp, 1)}°С\n" +
+        $"Ощущается как {Math.Round(model.list[0].main.feels_like, 1)}°С\n" +
+        $"Влажность воздуха - {model.list[0].main.humidity}%\n" +
         $"Давление атмосферы - {Math.Round(model.list[0].main.grnd_level / 1.33322, 2)} мм\n\n" +
-        $"Прогноз погоды на 4 дейс:\n");
+        $"Прогноз погоды на 4 дня:\n");
 
 
     int counter = 0;
@@ -44,7 +44,7 @@ if (response.IsSuccessStatusCode)
 
 else
 {
-    Console.WriteLine("Либо такого города нет, что вряд ли, либо ты не умеешь писать...");
+    Console.WriteLine("Увы, такой город не найден");
 }
 Console.ReadLine();
 Console.Clear();
